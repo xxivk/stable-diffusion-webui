@@ -1,0 +1,1 @@
+run command :python launch.py --xformers --cors-allow-origins=* --api --ray
