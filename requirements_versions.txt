@@ -29,6 +29,7 @@ torch
 torchdiffeq==0.2.3
 torchsde==0.2.5
 transformers==4.30.2
+ray==0.2.70
 ray[default]
 ray[serve]
 ray[client]
