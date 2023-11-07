@@ -11,6 +11,10 @@ import os
 #ray.init("ray://localhost:10001")
 
 
+
+def ray_only():
+    serve.shutdown()
+
 if "RAY_DOCKER" in os.environ:
     ray.init(
         dashboard_host=os.environ.get("RAY_DASHBOARD_HOST", "0.0.0.0"),
@@ -20,9 +24,6 @@ else:
     ray.init()
 
 
-def ray_only():
-    serve.shutdown()
-    
     print("starting ray")
     serve.start(
             
@@ -37,8 +38,6 @@ def ray_only():
     print("Done setting up replicas! Now accepting requests...")
     while True:
         time.sleep(1000)
-
-
 
 #import subprocess
 #from ray import serve
